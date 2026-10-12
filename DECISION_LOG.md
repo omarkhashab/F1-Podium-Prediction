@@ -33,7 +33,7 @@ All numbers come from the committed, fully executed notebook. It runs top to bot
 - [ ] **Team sign-off on the two codebooks**: `codebooks/status_map.csv` (D11) and `codebooks/constructor_lineage.csv` (D12). Judgement calls are listed in §3 below.
 - [x] **PDF report:** `report/F1_Podium_Prediction_Report.pdf` (12 pages). Regenerate with `python report/build_report.py` after any notebook re-run; tables are read from `outputs/*.csv`. **Team: read it once before submitting.**
 - [ ] **Kaggle notebook** (accessible link). The notebook finds the Kaggle input folder automatically; enable Internet so `shap` and `lime` can install.
-- [ ] **GitHub**: commit and push to `github.com/Aymanoski/ACL` (make sure the repo is accessible).
+- [x] **GitHub**: pushed to the public repo `github.com/omarkhashab/F1-Podium-Prediction` (13 Oct). Add teammates as collaborators; the original `Aymanoski/ACL` can be synced later.
 - [ ] **Submit** via the form: Kaggle link, GitHub link, PDF.
 - [ ] Every member reads this file before the evaluation slot.
 
