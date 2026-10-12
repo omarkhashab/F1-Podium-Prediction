@@ -1,0 +1,15 @@
+table,rows_before,rows_after,dtype_changes,missing_pct_before,missing_pct_after,keys_ok_before,keys_ok_after,fk_orphans_before,fk_orphans_after,columns_added,columns_dropped
+circuits,77,77,9,0.0,0.0,True,True,0,0,country_iso,
+constructor_results,12625,12604,5,19.97,19.97,True,True,0,0,,
+constructor_standings,13391,13365,7,0.0,0.0,True,True,0,0,,
+constructors,212,212,5,0.0,0.0,True,True,0,0,,
+driver_standings,34863,34194,7,0.0,0.0,True,True,0,0,,
+drivers,861,861,9,20.12,20.12,True,True,0,0,nationality_iso,
+lap_times,589081,589081,6,0.0,0.0,True,True,0,0,time_sec,
+pit_stops,11371,11371,7,0.0,0.0,True,True,0,0,"duration_sec, duration_sec_outlier",
+qualifying,10494,10494,9,12.35,12.35,True,True,0,0,"q1_sec, q2_sec, q3_sec, q1_sec_outlier, q2_sec_outlier, q3_sec_outlier",
+races,1125,1114,18,56.04,55.99,True,True,0,0,,
+results,26759,24755,17,22.82,21.91,False,True,0,0,"fastestLapTime_sec, n_cars_merged, grid_raw, field_size, pitlane_start, grid_unknown, grid_pct, podium, status_group",time
+seasons,75,75,2,0.0,0.0,True,True,0,0,,
+sprint_results,360,360,15,0.98,0.98,True,True,0,0,fastestLapTime_sec,time
+status,139,139,2,0.0,0.0,True,True,0,0,,

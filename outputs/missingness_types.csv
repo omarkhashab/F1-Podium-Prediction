@@ -1,0 +1,34 @@
+table,column,missing,missing_pct,type,reason,usable_as_feature
+constructor_results,status,12608,99.87,outcome,'D' marks a disqualified constructor result; post-race,False
+drivers,number,802,93.15,structural,permanent car numbers only exist from 2014,False
+drivers,code,757,87.92,structural,3-letter codes only assigned to modern drivers,False
+qualifying,q1,156,1.49,pre-race-informative,"no Q1 time set (crash, exclusion, no lap)",True
+qualifying,q2,4647,44.28,pre-race-informative,knocked out before this session (2006+); structural before 2006 (single-session formats),True
+qualifying,q3,6865,65.42,pre-race-informative,knocked out before this session (2006+); structural before 2006 (single-session formats),True
+qualifying,q1_sec,156,1.49,pre-race-informative,"no Q1 time set (crash, exclusion, no lap)",True
+qualifying,q2_sec,4647,44.28,pre-race-informative,knocked out before this session (2006+); structural before 2006 (single-session formats),True
+qualifying,q3_sec,6865,65.42,pre-race-informative,knocked out before this session (2006+); structural before 2006 (single-session formats),True
+races,time,731,64.98,structural,race start time only recorded from 2005,False
+races,fp1_date,1035,92.0,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,fp1_time,1057,93.96,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,fp2_date,1035,92.0,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,fp2_time,1057,93.96,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,fp3_date,1053,93.6,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,fp3_time,1072,95.29,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,quali_date,1035,92.0,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,quali_time,1057,93.96,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,sprint_date,1107,98.4,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+races,sprint_time,1110,98.67,structural,session schedule only recorded from 2021 (sprint fields only on sprint weekends),False
+results,number,6,0.02,structural,car number not recorded for a few early entries,False
+results,position,10953,40.93,outcome,"not classified (retired, DSQ, ...)",False
+results,milliseconds,19079,71.3,outcome,only for classified finishers,False
+results,fastestLap,18507,69.16,structural,fastest-lap data only recorded from 2004 (and post-race anyway),False
+results,rank,18249,68.2,structural,fastest-lap data only recorded from 2004 (and post-race anyway),False
+results,fastestLapTime,18507,69.16,structural,fastest-lap data only recorded from 2004 (and post-race anyway),False
+results,fastestLapSpeed,18507,69.16,structural,fastest-lap data only recorded from 2004 (and post-race anyway),False
+results,fastestLapTime_sec,18507,69.16,structural,fastest-lap data only recorded from 2004 (and post-race anyway),False
+sprint_results,position,15,4.17,outcome,sprint not finished / not classified,False
+sprint_results,milliseconds,20,5.56,outcome,sprint not finished / not classified,False
+sprint_results,fastestLap,9,2.5,outcome,sprint not finished / not classified,False
+sprint_results,fastestLapTime,9,2.5,outcome,sprint not finished / not classified,False
+sprint_results,fastestLapTime_sec,9,2.5,outcome,sprint not finished / not classified,False

@@ -1,0 +1,3 @@
+scope,train_seasons,train_rows,pct_feature_cells_missing,val_rows,test_rows,LR_val_roc_auc,LR_val_pr_auc,LR_val_f1,LR_test_roc_auc,LR_test_pr_auc,LR_test_f1,RF_val_roc_auc,RF_val_pr_auc,RF_val_f1,RF_test_roc_auc,RF_test_pr_auc,RF_test_f1,FFNN_val_roc_auc,FFNN_val_pr_auc,FFNN_val_f1,FFNN_test_roc_auc,FFNN_test_pr_auc,FFNN_test_f1
+modern,2006–2020,6108,2.59,879,918,0.9472,0.7223,0.7176,0.928,0.7129,0.6788,0.9407,0.6974,0.7013,0.9258,0.7092,0.63,0.9426,0.7043,0.7059,0.9247,0.7127,0.6554
+all,1950–2020,22958,20.78,879,918,0.9418,0.7048,0.7217,0.9224,0.6936,0.6409,0.9278,0.6701,0.6639,0.9103,0.6699,0.5929,0.943,0.719,0.699,0.9251,0.7012,0.6529

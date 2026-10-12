@@ -1,0 +1,17 @@
+decision,topic,applied (counts)
+D1,Seasons,"main (2006, 2024), comparison (1950, 2024); first seasons {'qualifying': 1994, 'lap_times': 1996, 'pit_stops': 2011, 'sprint_results': 2021}"
+D2,Non-starters,dropped 1535 rows without a grid slot (modern: 9); kept 84 'Withdrew' with grid > 0
+D3,Shared drives,merged 125 rows into 61 driver-races; 15 races without exactly 3 podium rows (all explained)
+D4,Indianapolis 500,excluded 11 races (1132 rows across tables)
+D5,grid = 0,77 pit-lane starts -> field_size + 1; 45 unknown pre-2006 slots -> NaN
+D6,Missing features,domain fill 11360 cells; 12516 cells left for train-median + indicator
+D7,Round-1 standings,75 round-1 races use last season's final standings
+D8,Timing outliers,"482 cells -> NaN (hard limits only: pit stops outside [1.5 s, 120 s], qualifying > 2x session median)"
+D9,Lap cleaning,513483 clean laps kept of 589081; pace_ratio for 10655 driver-races
+D10,Target,podium = positionOrder <= 3; all modern races have exactly 3
+D11,Status codebook,"139 labels -> {'mechanical': 57, 'lapped': 33, 'ambiguous': 30, 'incident': 11, 'non_start': 4, 'disqualified': 3, 'finished': 1}"
+D12,Constructor lineage,"37 rules, 11 families"
+D13,Standings,"rank, pts_share, gap_to_leader_share (no raw points)"
+D14,Sprint weekends,18 sprint weekends; sprint_finish_pct as a feature
+D15,ISO countries,"43 nationalities + 35 countries, 0 unmapped"
+D16,Abnormal races,7 races flagged race_shortened (reporting only)

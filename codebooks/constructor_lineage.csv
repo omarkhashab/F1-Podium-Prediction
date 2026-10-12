@@ -1,0 +1,213 @@
+constructorId,constructor_name,constructor_family,year_from,year_to,note
+1,McLaren,McLaren,,,unmapped -> itself
+2,BMW Sauber,Hinwil,,,BMW Sauber (BMW bought Sauber 2006-09)
+3,Williams,Williams,,,unmapped -> itself
+4,Renault,Enstone,2002.0,,Renault 2002-11 and 2016-20; id 4 is shared with the unrelated 1977-85 Renault works team
+5,Toro Rosso,Faenza,,,Toro Rosso
+6,Ferrari,Ferrari,,,unmapped -> itself
+7,Toyota,Toyota,,,unmapped -> itself
+8,Super Aguri,Super Aguri,,,unmapped -> itself
+9,Red Bull,Milton Keynes,,,Red Bull (bought Jaguar for 2005)
+10,Force India,Silverstone,,,Force India (bought Spyker for 2008)
+11,Honda,Brackley,,,Honda (bought BAR for 2006)
+12,Spyker,Silverstone,,,Spyker
+13,MF1,Silverstone,,,MF1 (Midland bought Jordan for 2006)
+14,Spyker MF1,Silverstone,,,Spyker MF1 (renamed late 2006)
+15,Sauber,Hinwil,,,Sauber (incl. the 2024 Kick Sauber entry)
+16,BAR,Brackley,,,BAR
+17,Jordan,Silverstone,,,Jordan
+18,Minardi,Faenza,,,Minardi; bought by Red Bull for 2006
+19,Jaguar,Milton Keynes,,,Jaguar (Ford bought Stewart for 2000)
+20,Prost,Ligier/Prost,,,"Prost: JUDGEMENT CALL - bought Ligier for 1997, same Magny-Cours base"
+21,Arrows,Arrows,,,Arrows
+22,Benetton,Enstone,,,Benetton
+23,Brawn,Brackley,,,"Brawn: JUDGEMENT CALL - management buy-out of Honda; same factory, new owner, new car"
+24,Stewart,Milton Keynes,,,Stewart
+25,Tyrrell,Tyrrell,,,unmapped -> itself
+26,Lola,Lola,,,unmapped -> itself
+27,Ligier,Ligier/Prost,,,Ligier
+28,Forti,Forti,,,unmapped -> itself
+29,Footwork,Arrows,,,Footwork = Arrows renamed 1991-96
+30,Pacific,Pacific,,,unmapped -> itself
+31,Simtek,Simtek,,,unmapped -> itself
+32,Team Lotus,Team Lotus,,,unmapped -> itself
+33,Larrousse,Larrousse,,,unmapped -> itself
+34,Brabham,Brabham,,,unmapped -> itself
+35,Dallara,Dallara,,,unmapped -> itself
+36,Fondmetal,Fondmetal,,,unmapped -> itself
+37,March,March/Leyton House,1987.0,,March 1987-92 entry; earlier March ids/years are different works teams
+38,Andrea Moda,Andrea Moda,,,unmapped -> itself
+39,AGS,AGS,,,unmapped -> itself
+40,Lambo,Lambo,,,unmapped -> itself
+41,Leyton House,March/Leyton House,,,Leyton House = March renamed 1990-91
+42,Coloni,Coloni,,,unmapped -> itself
+44,Euro Brun,Euro Brun,,,unmapped -> itself
+45,Osella,Osella,,,unmapped -> itself
+46,Onyx,Onyx,,,unmapped -> itself
+47,Life,Life,,,unmapped -> itself
+48,Rial,Rial,,,unmapped -> itself
+49,Zakspeed,Zakspeed,,,unmapped -> itself
+50,RAM,RAM,,,unmapped -> itself
+51,Alfa Romeo,Hinwil,2019.0,2023.0,Alfa Romeo = Sauber rebranded; id 51 is shared with the unrelated 1950-85 Alfa Romeo works team
+52,Spirit,Spirit,,,unmapped -> itself
+53,Toleman,Enstone,,,"Toleman: JUDGEMENT CALL - bought by Benetton for 1986, same Enstone factory"
+54,ATS,ATS,,,unmapped -> itself
+55,Theodore,Theodore,,,unmapped -> itself
+56,Fittipaldi,Fittipaldi,,,unmapped -> itself
+57,Ensign,Ensign,,,unmapped -> itself
+58,Shadow,Shadow,,,unmapped -> itself
+59,Wolf,Wolf,,,unmapped -> itself
+60,Merzario,Merzario,,,unmapped -> itself
+61,Kauhsen,Kauhsen,,,unmapped -> itself
+62,Rebaque,Rebaque,,,unmapped -> itself
+63,Surtees,Surtees,,,unmapped -> itself
+64,Hesketh,Hesketh,,,unmapped -> itself
+65,Martini,Martini,,,unmapped -> itself
+66,BRM,BRM,,,unmapped -> itself
+67,Penske,Penske,,,unmapped -> itself
+68,LEC,LEC,,,unmapped -> itself
+69,McGuire,McGuire,,,unmapped -> itself
+70,Boro,Boro,,,unmapped -> itself
+71,Apollon,Apollon,,,unmapped -> itself
+72,Kojima,Kojima,,,unmapped -> itself
+73,Parnelli,Parnelli,,,unmapped -> itself
+74,Maki,Maki,,,unmapped -> itself
+75,Embassy Hill,Embassy Hill,,,unmapped -> itself
+76,Lyncar,Lyncar,,,unmapped -> itself
+77,Trojan,Trojan,,,unmapped -> itself
+78,Amon,Amon,,,unmapped -> itself
+79,Token,Token,,,unmapped -> itself
+80,Iso Marlboro,Iso Marlboro,,,unmapped -> itself
+81,Tecno,Tecno,,,unmapped -> itself
+82,Matra,Matra,,,unmapped -> itself
+83,Politoys,Politoys,,,unmapped -> itself
+84,Connew,Connew,,,unmapped -> itself
+85,Bellasi,Bellasi,,,unmapped -> itself
+86,De Tomaso,De Tomaso,,,unmapped -> itself
+87,Cooper,Cooper,,,unmapped -> itself
+88,Eagle,Eagle,,,unmapped -> itself
+89,LDS,LDS,,,unmapped -> itself
+90,Protos,Protos,,,unmapped -> itself
+91,Shannon,Shannon,,,unmapped -> itself
+92,Scirocco,Scirocco,,,unmapped -> itself
+93,RE,RE,,,unmapped -> itself
+94,BRP,BRP,,,unmapped -> itself
+95,Porsche,Porsche,,,unmapped -> itself
+96,Derrington,Derrington,,,unmapped -> itself
+97,Gilby,Gilby,,,unmapped -> itself
+98,Stebro,Stebro,,,unmapped -> itself
+99,Emeryson,Emeryson,,,unmapped -> itself
+100,ENB,ENB,,,unmapped -> itself
+101,JBW,JBW,,,unmapped -> itself
+102,Ferguson,Ferguson,,,unmapped -> itself
+103,MBM,MBM,,,unmapped -> itself
+104,Behra-Porsche,Behra-Porsche,,,unmapped -> itself
+105,Maserati,Maserati,,,unmapped -> itself
+106,Scarab,Scarab,,,unmapped -> itself
+107,Watson,Watson,,,unmapped -> itself
+108,Epperly,Epperly,,,unmapped -> itself
+109,Phillips,Phillips,,,unmapped -> itself
+110,Lesovsky,Lesovsky,,,unmapped -> itself
+111,Trevis,Trevis,,,unmapped -> itself
+112,Meskowski,Meskowski,,,unmapped -> itself
+113,Kurtis Kraft,Kurtis Kraft,,,unmapped -> itself
+114,Kuzma,Kuzma,,,unmapped -> itself
+115,Christensen,Christensen,,,unmapped -> itself
+116,Ewing,Ewing,,,unmapped -> itself
+117,Aston Martin,Silverstone,,,Aston Martin (Racing Point renamed 2021)
+118,Vanwall,Vanwall,,,unmapped -> itself
+119,Moore,Moore,,,unmapped -> itself
+120,Dunn,Dunn,,,unmapped -> itself
+121,Elder,Elder,,,unmapped -> itself
+122,Sutton,Sutton,,,unmapped -> itself
+123,Fry,Fry,,,unmapped -> itself
+124,Tec-Mec,Tec-Mec,,,unmapped -> itself
+125,Connaught,Connaught,,,unmapped -> itself
+126,Alta,Alta,,,unmapped -> itself
+127,OSCA,OSCA,,,unmapped -> itself
+128,Gordini,Gordini,,,unmapped -> itself
+129,Stevens,Stevens,,,unmapped -> itself
+130,Bugatti,Bugatti,,,unmapped -> itself
+131,Mercedes,Brackley,2010.0,,Mercedes (bought Brawn); id 131 is shared with the 1954-55 Mercedes works team
+132,Lancia,Lancia,,,unmapped -> itself
+133,HWM,HWM,,,unmapped -> itself
+134,Schroeder,Schroeder,,,unmapped -> itself
+135,Pawl,Pawl,,,unmapped -> itself
+136,Pankratz,Pankratz,,,unmapped -> itself
+137,Arzani-Volpini,Arzani-Volpini,,,unmapped -> itself
+138,Nichels,Nichels,,,unmapped -> itself
+139,Bromme,Bromme,,,unmapped -> itself
+140,Klenk,Klenk,,,unmapped -> itself
+141,Simca,Simca,,,unmapped -> itself
+142,Turner,Turner,,,unmapped -> itself
+143,Del Roy,Del Roy,,,unmapped -> itself
+144,Veritas,Veritas,,,unmapped -> itself
+145,BMW,BMW,,,unmapped -> itself
+146,EMW,EMW,,,unmapped -> itself
+147,AFM,AFM,,,unmapped -> itself
+148,Frazer Nash,Frazer Nash,,,unmapped -> itself
+149,Sherman,Sherman,,,unmapped -> itself
+150,Deidt,Deidt,,,unmapped -> itself
+151,ERA,ERA,,,unmapped -> itself
+152,Aston Butterworth,Aston Butterworth,,,unmapped -> itself
+153,Cisitalia,Cisitalia,,,unmapped -> itself
+154,Talbot-Lago,Talbot-Lago,,,unmapped -> itself
+155,Hall,Hall,,,unmapped -> itself
+156,Marchese,Marchese,,,unmapped -> itself
+157,Langley,Langley,,,unmapped -> itself
+158,Rae,Rae,,,unmapped -> itself
+159,Olson,Olson,,,unmapped -> itself
+160,Wetteroth,Wetteroth,,,unmapped -> itself
+161,Adams,Adams,,,unmapped -> itself
+162,Snowberger,Snowberger,,,unmapped -> itself
+163,Milano,Milano,,,unmapped -> itself
+164,HRT,HRT,,,unmapped -> itself
+167,Cooper-Maserati,Cooper-Maserati,,,unmapped -> itself
+166,Virgin,Banbury,,,Virgin
+168,Cooper-OSCA,Cooper-OSCA,,,unmapped -> itself
+169,Cooper-Borgward,Cooper-Borgward,,,unmapped -> itself
+170,Cooper-Climax,Cooper-Climax,,,unmapped -> itself
+171,Cooper-Castellotti,Cooper-Castellotti,,,unmapped -> itself
+172,Lotus-Climax,Lotus-Climax,,,unmapped -> itself
+173,Lotus-Maserati,Lotus-Maserati,,,unmapped -> itself
+174,De Tomaso-Osca,De Tomaso-Osca,,,unmapped -> itself
+175,De Tomaso-Alfa Romeo,De Tomaso-Alfa Romeo,,,unmapped -> itself
+176,Lotus-BRM,Lotus-BRM,,,unmapped -> itself
+177,Lotus-Borgward,Lotus-Borgward,,,unmapped -> itself
+178,Cooper-Alfa Romeo,Cooper-Alfa Romeo,,,unmapped -> itself
+179,De Tomaso-Ferrari,De Tomaso-Ferrari,,,unmapped -> itself
+180,Lotus-Ford,Lotus-Ford,,,unmapped -> itself
+181,Brabham-BRM,Brabham-BRM,,,unmapped -> itself
+182,Brabham-Ford,Brabham-Ford,,,unmapped -> itself
+183,Brabham-Climax,Brabham-Climax,,,unmapped -> itself
+184,LDS-Climax,LDS-Climax,,,unmapped -> itself
+185,LDS-Alfa Romeo,LDS-Alfa Romeo,,,unmapped -> itself
+186,Cooper-Ford,Cooper-Ford,,,unmapped -> itself
+187,McLaren-Ford,McLaren-Ford,,,unmapped -> itself
+188,McLaren-Serenissima,McLaren-Serenissima,,,unmapped -> itself
+189,Eagle-Climax,Eagle-Climax,,,unmapped -> itself
+190,Eagle-Weslake,Eagle-Weslake,,,unmapped -> itself
+191,Brabham-Repco,Brabham-Repco,,,unmapped -> itself
+192,Cooper-Ferrari,Cooper-Ferrari,,,unmapped -> itself
+193,Cooper-ATS,Cooper-ATS,,,unmapped -> itself
+194,McLaren-BRM,McLaren-BRM,,,unmapped -> itself
+195,Cooper-BRM,Cooper-BRM,,,unmapped -> itself
+196,Matra-Ford,Matra-Ford,,,unmapped -> itself
+197,BRM-Ford,BRM-Ford,,,unmapped -> itself
+198,McLaren-Alfa Romeo,McLaren-Alfa Romeo,,,unmapped -> itself
+199,March-Alfa Romeo,March-Alfa Romeo,,,unmapped -> itself
+200,March-Ford,March-Ford,,,unmapped -> itself
+201,Lotus-Pratt & Whitney,Lotus-Pratt & Whitney,,,unmapped -> itself
+202,Shadow-Ford,Shadow-Ford,,,unmapped -> itself
+203,Shadow-Matra,Shadow-Matra,,,unmapped -> itself
+204,Brabham-Alfa Romeo,Brabham-Alfa Romeo,,,unmapped -> itself
+205,Lotus,Caterham,,,Lotus Racing / Team Lotus 2010-11: JUDGEMENT CALL - unrelated to the old Team Lotus
+206,Marussia,Banbury,,,Marussia (Virgin renamed 2012)
+207,Caterham,Caterham,,,Caterham (Team Lotus renamed 2012)
+208,Lotus F1,Enstone,,,Lotus F1 (Renault team renamed 2012)
+209,Manor Marussia,Banbury,,,Manor Marussia: JUDGEMENT CALL - rescued from administration for 2015
+210,Haas F1 Team,Haas F1 Team,,,unmapped -> itself
+211,Racing Point,Silverstone,,,"Racing Point: JUDGEMENT CALL - 2018 administration created a new entry, but same factory and staff"
+213,AlphaTauri,Faenza,,,AlphaTauri (Toro Rosso renamed 2020)
+214,Alpine F1 Team,Enstone,,,Alpine (Renault renamed 2021)
+215,RB F1 Team,Faenza,,,RB (AlphaTauri renamed 2024)

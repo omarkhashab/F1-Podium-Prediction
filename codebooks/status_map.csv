@@ -1,0 +1,140 @@
+statusId,status,group,note,n_results
+1,Finished,finished,,7550
+2,Disqualified,disqualified,,146
+3,Accident,incident,,1010
+4,Collision,incident,,854
+5,Engine,mechanical,,1983
+6,Gearbox,mechanical,,803
+7,Transmission,mechanical,,309
+8,Clutch,mechanical,,204
+9,Hydraulics,mechanical,,139
+10,Electrical,mechanical,,316
+11,+1 Lap,lapped,,4029
+12,+2 Laps,lapped,,1608
+13,+3 Laps,lapped,,722
+14,+4 Laps,lapped,,392
+15,+5 Laps,lapped,,215
+16,+6 Laps,lapped,,148
+17,+7 Laps,lapped,,93
+18,+8 Laps,lapped,,50
+19,+9 Laps,lapped,,35
+20,Spun off,incident,,778
+21,Radiator,mechanical,,44
+22,Suspension,mechanical,,425
+23,Brakes,mechanical,,245
+24,Differential,mechanical,,59
+25,Overheating,mechanical,,128
+26,Mechanical,mechanical,,29
+27,Tyre,ambiguous,tyre failure or damage,54
+28,Driver Seat,ambiguous,unclear,1
+29,Puncture,ambiguous,debris/contact or tyre failure,41
+30,Driveshaft,mechanical,,25
+31,Retired,ambiguous,no cause recorded,99
+32,Fuel pressure,mechanical,,34
+33,Front wing,ambiguous,usually contact,5
+34,Water pressure,mechanical,,9
+35,Refuelling,ambiguous,pit equipment / team error,1
+36,Wheel,ambiguous,failure or bad pit stop,86
+37,Throttle,mechanical,,108
+38,Steering,mechanical,,46
+39,Technical,ambiguous,no detail recorded,5
+40,Electronics,mechanical,,11
+41,Broken wing,ambiguous,usually contact,11
+42,Heat shield fire,mechanical,component failure -> mechanical,15
+43,Exhaust,mechanical,,29
+44,Oil leak,mechanical,,111
+45,+11 Laps,lapped,,16
+46,Wheel rim,ambiguous,failure or kerb/contact damage,3
+47,Water leak,mechanical,,31
+48,Fuel pump,mechanical,,60
+49,Track rod,mechanical,,2
+50,+17 Laps,lapped,,6
+51,Oil pressure,mechanical,,81
+128,+42 Laps,lapped,,1
+53,+13 Laps,lapped,,9
+54,Withdrew,non_start,kept in the modelling table when grid > 0 (D2) but not a race start (Q3 denominator),84
+55,+12 Laps,lapped,,11
+56,Engine fire,mechanical,,1
+129,Engine misfire,mechanical,,1
+58,+26 Laps,lapped,,1
+59,Tyre puncture,ambiguous,,1
+60,Out of fuel,ambiguous,team miscalculation or fuel-system failure,100
+61,Wheel nut,ambiguous,usually a pit-stop (team) error,9
+62,Not classified,ambiguous,"started, too few laps completed - cause unknown",172
+63,Pneumatics,mechanical,,4
+64,Handling,ambiguous,car problem or driver,53
+65,Rear wing,ambiguous,failure or contact,10
+66,Fire,ambiguous,cause unknown,3
+67,Wheel bearing,mechanical,,34
+68,Physical,incident,driver-related -> incident,31
+69,Fuel system,mechanical,,153
+70,Oil line,mechanical,,1
+71,Fuel rig,ambiguous,pit equipment / team error,2
+72,Launch control,mechanical,electronic system failure at the start -> mechanical,1
+73,Injured,incident,driver-related -> incident,7
+74,Fuel,ambiguous,unclear: fuel system or fuel quantity,4
+75,Power loss,mechanical,,15
+76,Vibrations,ambiguous,car problem or damage,10
+77,107% Rule,non_start,,0
+78,Safety,ambiguous,unclear,2
+79,Drivetrain,mechanical,,2
+80,Ignition,mechanical,,124
+81,Did not qualify,non_start,,0
+82,Injury,incident,driver-related -> incident,13
+83,Chassis,ambiguous,failure or crash damage,29
+84,Battery,mechanical,,17
+85,Stalled,ambiguous,driver error or anti-stall failure,1
+86,Halfshaft,mechanical,,99
+87,Crankshaft,mechanical,,1
+88,+10 Laps,lapped,,27
+89,Safety concerns,ambiguous,team withdrew the car,2
+90,Not restarted,ambiguous,did not take a restart (red flag) - cause unknown,1
+91,Alternator,mechanical,,31
+92,Underweight,disqualified,car below minimum weight: a regulation decision -> disqualified,1
+93,Safety belt,ambiguous,equipment failure or driver,1
+94,Oil pump,mechanical,,13
+95,Fuel leak,mechanical,,44
+96,Excluded,disqualified,regulation decision -> disqualified (Excluded with grid 0 already dropped by D2),2
+97,Did not prequalify,non_start,,0
+98,Injection,mechanical,,35
+99,Distributor,mechanical,,14
+100,Driver unwell,incident,driver-related -> incident,10
+101,Turbo,mechanical,,144
+102,CV joint,mechanical,,1
+103,Water pump,mechanical,,7
+104,Fatal accident,incident,,3
+105,Spark plugs,mechanical,,3
+106,Fuel pipe,mechanical,,3
+107,Eye injury,incident,driver-related -> incident,1
+108,Oil pipe,mechanical,,11
+109,Axle,mechanical,,15
+110,Water pipe,mechanical,,3
+111,+14 Laps,lapped,,12
+112,+15 Laps,lapped,,7
+113,+25 Laps,lapped,,3
+114,+18 Laps,lapped,,3
+115,+22 Laps,lapped,,2
+116,+16 Laps,lapped,,4
+117,+24 Laps,lapped,,2
+118,+29 Laps,lapped,,1
+119,+23 Laps,lapped,,1
+120,+21 Laps,lapped,,1
+121,Magneto,mechanical,,8
+122,+44 Laps,lapped,,1
+123,+30 Laps,lapped,,1
+124,+19 Laps,lapped,,4
+125,+46 Laps,lapped,,1
+126,Supercharger,mechanical,,2
+127,+20 Laps,lapped,,0
+130,Collision damage,incident,,60
+131,Power Unit,mechanical,,42
+132,ERS,mechanical,,5
+133,+49 Laps,lapped,,0
+134,+38 Laps,lapped,,0
+135,Brake duct,mechanical,,1
+136,Seat,ambiguous,unclear,1
+137,Damage,ambiguous,usually contact,2
+138,Debris,ambiguous,external cause,1
+139,Illness,incident,"driver-related, not a car failure -> incident",3
+140,Undertray,ambiguous,failure or kerb damage,4
+141,Cooling system,mechanical,,1

@@ -1,0 +1,86 @@
+step,table,column,rule,rows_affected,cells_affected,rows_before,rows_after,notes
+F3,constructor_results,,sentinel -> NaN,,12608.0,,,
+F3,constructors,,html.unescape,,1.0,,,
+F3,drivers,,strip whitespace,,1.0,,,
+F3,drivers,,sentinel -> NaN,,1559.0,,,
+F3,qualifying,,sentinel -> NaN,,11668.0,,,
+F3,races,,sentinel -> NaN,,11349.0,,,
+F3,results,,sentinel -> NaN,,122887.0,,,
+F3,sprint_results,,sentinel -> NaN,,73.0,,,
+F4/F5,circuits,,semantic typing (+ durations -> *_sec),,308.0,,,"int: 2, float: 2"
+F4/F5,constructor_results,,semantic typing (+ durations -> *_sec),,50500.0,,,"int: 3, float: 1"
+F4/F5,constructor_standings,,semantic typing (+ durations -> *_sec),,80346.0,,,"int: 5, float: 1"
+F4/F5,constructors,,semantic typing (+ durations -> *_sec),,212.0,,,int: 1
+F4/F5,driver_standings,,semantic typing (+ durations -> *_sec),,209178.0,,,"int: 5, float: 1"
+F4/F5,drivers,,semantic typing (+ durations -> *_sec),,2583.0,,,"int: 2, date: 1"
+F4/F5,lap_times,,semantic typing (+ durations -> *_sec),,3534486.0,,,"int: 5, duration: 1"
+F4/F5,pit_stops,,semantic typing (+ durations -> *_sec),,79597.0,,,"int: 5, duration: 1, tod: 1"
+F4/F5,qualifying,,semantic typing (+ durations -> *_sec),,94446.0,,,"int: 6, duration: 3"
+F4/F5,races,,semantic typing (+ durations -> *_sec),,18000.0,,,"int: 4, date: 6, tod: 6"
+F4/F5,results,,semantic typing (+ durations -> *_sec),,428144.0,,,"int: 13, float: 2, duration: 1"
+F4/F5,seasons,,semantic typing (+ durations -> *_sec),,75.0,,,int: 1
+F4/F5,sprint_results,,semantic typing (+ durations -> *_sec),,5040.0,,,"int: 12, float: 1, duration: 1"
+F4/F5,status,,semantic typing (+ durations -> *_sec),,139.0,,,int: 1
+F6,results,time,drop 'time' (mixes absolute race time with gaps; post-race),,26759.0,,,
+F6,sprint_results,time,drop 'time' (mixes absolute race time with gaps; post-race),,360.0,,,
+D4,races,,exclude Indianapolis 500 (1950–60),11.0,,1125.0,1114.0,
+D4,results,,exclude Indianapolis 500 (1950–60),405.0,,26759.0,26354.0,
+D4,qualifying,,exclude Indianapolis 500 (1950–60),0.0,,10494.0,10494.0,
+D4,sprint_results,,exclude Indianapolis 500 (1950–60),0.0,,360.0,360.0,
+D4,lap_times,,exclude Indianapolis 500 (1950–60),0.0,,589081.0,589081.0,
+D4,pit_stops,,exclude Indianapolis 500 (1950–60),0.0,,11371.0,11371.0,
+D4,driver_standings,,exclude Indianapolis 500 (1950–60),669.0,,34863.0,34194.0,
+D4,constructor_standings,,exclude Indianapolis 500 (1950–60),26.0,,13391.0,13365.0,
+D4,constructor_results,,exclude Indianapolis 500 (1950–60),21.0,,12625.0,12604.0,
+D2,results,,drop non-starter without grid slot: 107% Rule,9.0,,,,modern scope: 0
+D2,results,,drop non-starter without grid slot: Did not prequalify,331.0,,,,modern scope: 0
+D2,results,,drop non-starter without grid slot: Did not qualify,1025.0,,,,modern scope: 4
+D2,results,,drop non-starter without grid slot: Excluded,6.0,,,,modern scope: 0
+D2,results,,drop non-starter without grid slot: Withdrew,164.0,,,,modern scope: 5
+D2,results,,total non-starters dropped,1535.0,,26354.0,24819.0,kept 84 'Withdrew' rows with grid > 0
+D3,results,,merge shared drives (pre-race fields from earliest resultId; podium if any car),64.0,,24819.0,24755.0,
+D5,results,grid,"grid 0 -> field_size + 1 (2006+, pitlane_start = 1)",,77.0,,,
+D5,results,grid,"grid 0 -> NaN (pre-2006, grid_unknown = 1)",,45.0,,,
+D8,pit_stops,duration_sec,"outside [1.5 s, 120 s] -> NaN (hard limits only)",,481.0,,,robust z > 3.5 would have flagged 1491 (13.1%) - not applied
+D8,qualifying,q1_sec,time > 2 x session median -> NaN,,1.0,,,
+D8,qualifying,q2_sec,time > 2 x session median -> NaN,,0.0,,,
+D8,qualifying,q3_sec,time > 2 x session median -> NaN,,0.0,,,
+D9,lap_times,,remove lap 1,11041.0,,,,removed from pace calculation only
+D9,lap_times,,remove pit in/out laps,21877.0,,,,removed from pace calculation only
+D9,lap_times,,remove > 107% of race median,42680.0,,,,removed from pace calculation only
+D11,status,,status codebook: every label -> one group,,139.0,,,"{'mechanical': 57, 'lapped': 33, 'ambiguous': 30, 'incident': 11, 'non_start': 4, 'disqualified': 3, 'finished': 1}"
+D12,constructors,,constructor lineage -> constructor_family,,37.0,,,"11 families, 6 judgement calls"
+D15,drivers,nationality_iso,nationality -> ISO alpha-3,,861.0,,,
+D15,circuits,country_iso,country -> ISO alpha-3,,77.0,,,
+D13/D7,driver_standings,,"standings -> rank, pts_share, gap_to_leader_share (before the race)",,34194.0,,,
+D7,races,,round 1 uses last season's final standings,,75.0,,,
+D14,sprint_results,,sprint_finish_pct = position / sprint field size,,360.0,,,
+D16,races,,race_shortened flag (reporting only),,7.0,,,
+D6,modeling_table,grid_minus_quali,missing features: domain fill / median + indicator,,23.0,,,"step 1: 0, step 2: 23"
+D6,modeling_table,quali_pos,missing features: domain fill / median + indicator,,23.0,,,"step 1: 0, step 2: 23"
+D6,modeling_table,gap_to_pole_sec,missing features: domain fill / median + indicator,,98.0,,,"step 1: 0, step 2: 98"
+D6,modeling_table,gap_to_pole_pct,missing features: domain fill / median + indicator,,98.0,,,"step 1: 0, step 2: 98"
+D6,modeling_table,reached_q2,missing features: domain fill / median + indicator,,23.0,,,"step 1: 0, step 2: 23"
+D6,modeling_table,reached_q3,missing features: domain fill / median + indicator,,23.0,,,"step 1: 0, step 2: 23"
+D6,modeling_table,drv_champ_rank,missing features: domain fill / median + indicator,,165.0,,,"step 1: 0, step 2: 165"
+D6,modeling_table,drv_pts_share,missing features: domain fill / median + indicator,,165.0,,,"step 1: 0, step 2: 165"
+D6,modeling_table,drv_gap_to_leader_share,missing features: domain fill / median + indicator,,165.0,,,"step 1: 0, step 2: 165"
+D6,modeling_table,con_champ_rank,missing features: domain fill / median + indicator,,30.0,,,"step 1: 0, step 2: 30"
+D6,modeling_table,con_pts_share,missing features: domain fill / median + indicator,,30.0,,,"step 1: 0, step 2: 30"
+D6,modeling_table,con_gap_to_leader_share,missing features: domain fill / median + indicator,,30.0,,,"step 1: 0, step 2: 30"
+D6,modeling_table,drv_avg_finish_lastN,missing features: domain fill / median + indicator,,73.0,,,"step 1: 0, step 2: 73"
+D6,modeling_table,drv_podium_rate_lastN,missing features: domain fill / median + indicator,,73.0,,,"step 1: 0, step 2: 73"
+D6,modeling_table,drv_finish_rate_lastN,missing features: domain fill / median + indicator,,73.0,,,"step 1: 0, step 2: 73"
+D6,modeling_table,drv_pts_frac_lastN,missing features: domain fill / median + indicator,,73.0,,,"step 1: 0, step 2: 73"
+D6,modeling_table,con_best_finish_lastN,missing features: domain fill / median + indicator,,10.0,,,"step 1: 0, step 2: 10"
+D6,modeling_table,con_podiums_lastN,missing features: domain fill / median + indicator,,10.0,,,"step 1: 0, step 2: 10"
+D6,modeling_table,con_pts_frac_lastN,missing features: domain fill / median + indicator,,10.0,,,"step 1: 0, step 2: 10"
+D6,modeling_table,drv_pace_ratio_lastN,missing features: domain fill / median + indicator,,79.0,,,"step 1: 0, step 2: 79"
+D6,modeling_table,con_pit_ratio_lastN,missing features: domain fill / median + indicator,,1961.0,,,"step 1: 0, step 2: 1961"
+D6,modeling_table,pit_data_available,missing features: domain fill / median + indicator,,1933.0,,,"step 1: 1933, step 2: 0"
+D6,modeling_table,drv_career_starts,missing features: domain fill / median + indicator,,73.0,,,"step 1: 73, step 2: 0"
+D6,modeling_table,drv_career_podiums,missing features: domain fill / median + indicator,,73.0,,,"step 1: 73, step 2: 0"
+D6,modeling_table,drv_circuit_podium_rate,missing features: domain fill / median + indicator,,1736.0,,,"step 1: 0, step 2: 1736"
+D6,modeling_table,drv_circuit_first_visit,missing features: domain fill / median + indicator,,1736.0,,,"step 1: 1736, step 2: 0"
+D6,modeling_table,is_sprint_weekend,missing features: domain fill / median + indicator,,7545.0,,,"step 1: 7545, step 2: 0"
+D6,modeling_table,sprint_finish_pct,missing features: domain fill / median + indicator,,7545.0,,,"step 1: 0, step 2: 7545"
