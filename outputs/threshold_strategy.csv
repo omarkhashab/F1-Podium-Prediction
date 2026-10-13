@@ -1,7 +1,9 @@
 model,threshold,val_f1_max_f1_threshold,val_f1_top3_per_race
-ref_grid_rule,0.25,0.6688,0.6667
-lr_baseline,0.7244,0.7176,0.697
-lr_tuned,0.7241,0.7176,0.6818
-rf_default,0.2667,0.699,0.6742
-rf_tuned,0.7107,0.7013,0.6515
-ffnn,0.7009,0.7059,0.6591
+ref_grid_rule,0.3333,0.6923,0.6923
+lr_baseline,0.7316,0.7137,0.7094
+lr_tuned,0.7303,0.7137,0.7094
+rf_default,0.3367,0.7143,0.7094
+rf_tuned,0.767,0.7155,0.7009
+gb_tuned,0.7977,0.71,0.7009
+ffnn,0.8209,0.7143,0.6838
+ffnn_tuned,0.8069,0.7143,0.7009

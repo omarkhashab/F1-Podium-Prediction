@@ -1,0 +1,3 @@
+constructor history,val_pr_auc,val_roc_auc,test_pr_auc,train_rows_without_con_standings_pct,val_rows_without_con_standings_pct,Δval_vs_lineage,Δ_ci
+"lineage families (D12, chosen)",0.7453571969611545,0.935684727539931,0.6983776342101681,0.5201109570041609,0.0,0.0,—
+plain constructorId,0.7441846014416978,0.9357491846179629,0.6980774003622799,1.0748959778085991,0.7692307692307693,-0.0011725955194566984,"[-0.008, +0.005]"

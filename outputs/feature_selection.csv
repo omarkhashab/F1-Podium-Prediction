@@ -1,27 +1,27 @@
 feature,group,kept,reason_dropped
-grid,grid,False,|rho| = 0.969 with quali_pos (univariate AUC 0.918 vs 0.918)
-grid_pct,grid,False,|rho| = 0.958 with quali_pos (univariate AUC 0.918 vs 0.918)
+grid,grid,False,|rho| = 0.968 with quali_pos (univariate AUC 0.918 vs 0.919)
+grid_pct,grid,False,|rho| = 0.956 with quali_pos (univariate AUC 0.918 vs 0.919)
 pitlane_start,grid,True,
 grid_unknown,grid,False,constant in the training seasons (= 0)
 grid_minus_quali,grid,True,
 field_size,grid,True,
 quali_pos,qualifying,True,
-gap_to_pole_sec,qualifying,False,|rho| = 0.988 with gap_to_pole_pct (univariate AUC 0.900 vs 0.902)
+gap_to_pole_sec,qualifying,False,|rho| = 0.988 with gap_to_pole_pct (univariate AUC 0.902 vs 0.903)
 gap_to_pole_pct,qualifying,True,
 reached_q2,qualifying,True,
 reached_q3,qualifying,True,
 drv_champ_rank,standings,True,
-drv_pts_share,standings,False,|rho| = 0.959 with drv_champ_rank (univariate AUC 0.893 vs 0.894)
-drv_gap_to_leader_share,standings,False,|rho| = 0.959 with drv_champ_rank (univariate AUC 0.893 vs 0.894)
+drv_pts_share,standings,False,|rho| = 0.958 with drv_champ_rank (univariate AUC 0.893 vs 0.895)
+drv_gap_to_leader_share,standings,False,|rho| = 0.958 with drv_champ_rank (univariate AUC 0.893 vs 0.895)
 con_champ_rank,standings,True,
-con_pts_share,standings,False,|rho| = 1.000 with con_gap_to_leader_share (univariate AUC 0.896 vs 0.896)
+con_pts_share,standings,False,|rho| = 1.000 with con_gap_to_leader_share (univariate AUC 0.897 vs 0.897)
 con_gap_to_leader_share,standings,True,
 is_round_1,standings,True,
 drv_avg_finish_lastN,driver_form,True,
 drv_podium_rate_lastN,driver_form,True,
 drv_finish_rate_lastN,driver_form,True,
 drv_pts_frac_lastN,driver_form,True,
-con_best_finish_lastN,constructor_form,False,|rho| = 0.972 with con_pts_frac_lastN (univariate AUC 0.890 vs 0.896)
+con_best_finish_lastN,constructor_form,False,|rho| = 0.971 with con_pts_frac_lastN (univariate AUC 0.891 vs 0.896)
 con_podiums_lastN,constructor_form,True,
 con_pts_frac_lastN,constructor_form,True,
 drv_pace_ratio_lastN,pace_pit,True,
