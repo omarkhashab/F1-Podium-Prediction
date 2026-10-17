@@ -9,7 +9,7 @@ This document walks through the whole project in order and then goes through **e
 | [`F1_Podium_Prediction.ipynb`](F1_Podium_Prediction.ipynb) | The single run-all notebook (§1–§18 below refer to its sections) |
 | [`report/F1_Podium_Prediction_Report.pdf`](report/F1_Podium_Prediction_Report.pdf) | The analytical report (report sections are written "Report §x") |
 | [`DECISION_LOG.md`](DECISION_LOG.md) | Every decision with the evidence behind it |
-| `outputs/`, `outputs/figures/`, `codebooks/` | Every table (27 CSVs), figure (37 PNGs) and codebook (4 CSVs) the notebook writes |
+| `outputs/`, `outputs/figures/`, `codebooks/` | Every table (28 CSVs), figure (37 PNGs) and codebook (4 CSVs) the notebook writes |
 
 ---
 
@@ -52,11 +52,11 @@ flowchart LR
 | 8. Modelling table | §8 | 36 candidate features, explicit allowed list, 300-row leakage test | 7,905 rows × 1 per (raceId, driverId) |
 | 9. Feature selection | §9 | Univariate evidence on training seasons; redundancy filter | 26 of 36 features kept |
 | 10. Split | §10 | By season; whole races stay together | 5,768 / 780 / 1,357 rows |
-| 11. Preprocessing | §11 | Median imputation + missing indicators + scaling; E1–E3 experiments | Indicators +0.010 PR-AUC |
-| 12. Evaluation harness | §12 | Five metrics; threshold chosen on validation | PR-AUC primary, F1 secondary |
+| 11. Preprocessing | §11 | Median imputation + missing indicators + scaling; effect on distributions plotted | — |
+| 12. Evaluation harness + E1–E3 | §12, §12.1 | Five metrics; threshold chosen on validation; preprocessing-order experiments, each in its own cell | PR-AUC primary, F1 secondary; indicators +0.010 PR-AUC |
 | 13. Models | §13 | Grid rule → LR baseline → tuned LR → RF → tuned RF → gradient boosting → NN → tuned NN; calibration | All learned models beat the grid rule |
 | 14. Test | §14 | Final model chosen on validation, test scored once; bootstrap CIs; scope and split sensitivity | Test PR-AUC **0.698** vs grid rule 0.647 |
-| 15. Experiments | §15 | Ablation (with CIs), form window, constructor lineage | Starting position is the core signal |
+| 15. Experiments | §15 | Ablation (with CIs), form window, constructor lineage, feature-set check | Starting position is the core signal |
 | 16. XAI | §16 | Permutation importance, global SHAP, local SHAP + LIME | `quali_pos` dominates; not causal |
 | 17. Inference | §17 | `predict_podium(entry)` from raw pre-race inputs | Complete, no-qualifying and debutant demos |
 | 18. Report material | §18 | Decision table, cleaning summary, figure/table list | — |
@@ -73,10 +73,10 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 
 **The brief asks for:** one notebook containing the audit, cleaning, data-engineering answers, feature engineering, modelling, experiments, XAI and the inference function, with every conclusion backed by a plot, statistic or controlled experiment. It must run top to bottom with a single Run All, with no hidden manual cells, sectioned for easy navigation.
 
-**What we deliver:** [`F1_Podium_Prediction.ipynb`](F1_Podium_Prediction.ipynb) — 168 cells (94 code), 18 numbered sections with a contents table in the first cell.
+**What we deliver:** [`F1_Podium_Prediction.ipynb`](F1_Podium_Prediction.ipynb) — 179 cells (99 code), 18 numbered sections with a contents table in the first cell.
 
 **Results:**
-- Runs top to bottom with **0 errors**, all 94 code cells executed in order (execution counts 1–94), about 8 minutes on a laptop CPU.
+- Runs top to bottom with **0 errors**, all 99 code cells executed in order (execution counts 1–99), about 8 minutes on a laptop CPU.
 - **Reproducible:** a fresh run with all outputs stripped regenerated every CSV in `outputs/` byte-for-byte; seeds are fixed (NumPy, scikit-learn, TensorFlow).
 - No result is hard-coded: every metric is computed by `roc_auc_score`, `average_precision_score`, `f1_score` etc. on model predictions.
 - Every decision is marked `# DECISION:` in the code and justified in the markdown next to it; every interpretation sits in a ✍️ **WRITE-UP** cell under the evidence it interprets.
@@ -198,9 +198,9 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 
 **The brief asks for:** remove one feature group at a time and re-train to measure each group's contribution after training (complementing the pre-training exploratory evidence), reported per group; and at least two preprocessing-order experiments; effect of preprocessing on distribution/range/values.
 
-**What we deliver:** §11 (preprocessing + E1–E3), §15 (ablation, form window, lineage). Report §5, §7 (Tables 7, 14–16, Figures 11, 16).
+**What we deliver:** §11 (preprocessing), §12.1 (E1–E3, one cell each), §15 (ablation, form window, lineage, feature-set check). Report §5, §7 (Tables 7, 14–16, Figures 11, 16).
 
-**Preprocessing (§11):** median imputation with missing-value indicators, then standardisation (tree models skip scaling), fitted on training seasons only. The effect is plotted for five features (raw vs imputed + scaled: centred, unit variance, no NaN).
+**Preprocessing (§11; experiments in §12.1):** median imputation with missing-value indicators, then standardisation (tree models skip scaling), fitted on training seasons only. The effect is plotted for five features (raw vs imputed + scaled: centred, unit variance, no NaN).
 
 | Experiment (validation, logistic regression) | Variant A | Variant B | Conclusion |
 |---|---|---|---|
@@ -225,6 +225,7 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 
 **Extra experiments (empirical justification of two design choices):**
 - **Form window (§15.2):** N = 3 → Δ −0.013 [−0.022, −0.002] (worse), N = 10 → Δ −0.006 [−0.029, +0.014] (same). **N = 5 kept.**
+- **Feature set (§15.4):** all 33 usable candidates vs the 26 selected → validation Δ +0.004 [−0.004, +0.014], test identical: the selection rule costs no accuracy; the 26 are kept for simplicity.
 - **Constructor lineage vs plain `constructorId` (§15.3):** Δ −0.001 [−0.008, +0.005] — no accuracy difference. Families kept as a documented judgement call (a rename doesn't reset a real team's history; Q3 compares factories across eras).
 
 ---

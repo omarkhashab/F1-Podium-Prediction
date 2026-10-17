@@ -125,6 +125,7 @@ BOOT = pd.read_csv(OUT / "bootstrap_ci.csv").set_index(["split", "model"])
 SPL = pd.read_csv(OUT / "split_sensitivity.csv", index_col=[0, 1])
 FW = pd.read_csv(OUT / "form_window_experiment.csv", index_col=0)
 LIN = pd.read_csv(OUT / "lineage_experiment.csv", index_col=0)
+FSE = pd.read_csv(OUT / "feature_set_experiment.csv", index_col=0)
 CAL = pd.read_csv(OUT / "calibration_experiment.csv", index_col=0)
 INF = pd.read_csv(OUT / "inference_demo.csv", index_col=0)
 TNN = pd.read_csv(OUT / "tuning_nn.csv")
@@ -401,7 +402,7 @@ story.append(P("Selection uses the <b>training seasons only</b> (2006–2019), s
                f"<i>gap_to_pole_pct</i> ({EV.loc['gap_to_pole_pct', 'univariate_auc']:.2f}), "
                f"<i>drv_pts_frac_lastN</i> ({EV.loc['drv_pts_frac_lastN', 'univariate_auc']:.2f}) and "
                f"<i>con_gap_to_leader_share</i> ({EV.loc['con_gap_to_leader_share', 'univariate_auc']:.2f}). "
-               "Figure 10 shows the podium rate across the values of every candidate."))
+               "Figure 10 shows the podium rate across the values of every candidate. A controlled check (Section 7.6) confirms the rule costs no accuracy."))
 drows = [["Dropped feature", "Reason (training seasons 2006–2019)"]]
 for r in FS[~FS.kept].itertuples():
     drows.append([f"<i>{r.feature}</i>", r.reason_dropped.replace("rho", "ρ")])
@@ -633,6 +634,15 @@ story.append(P("The course guide suggests following <i>constructorId</i> and acc
                "Martin and Alpine would otherwise have no standings) and because Q3 compares the same factory "
                "across eras. It is a documented judgement call, not a performance claim."))
 
+story.append(P("7.6 Feature-set check", "h2"))
+fsrows = [["Feature set", "Features", "Val PR-AUC", "Δ vs selected [95% CI]", "Test PR-AUC"]]
+for n, r in FSE.iterrows():
+    fsrows.append([n, f"{int(r.n_features)}", f3(r.val_pr_auc), "—" if r.Δ_ci == "—" else f"{r.Δval_vs_selected:+.3f} {r.Δ_ci}",
+                   f3(r.test_pr_auc)])
+story.append(table(fsrows, [5.2, 1.8, 2.3, 4.6, 2.3]))
+story.append(P("Table 17 — The final model trained on the 26 selected features vs all 33 usable candidates (the 7 near-duplicates added back).", "cap"))
+story.append(P("Adding the near-duplicates back changes validation PR-AUC by +0.004 with an interval that includes 0, and test is identical. The selection rule therefore costs no accuracy; the 26 features are kept because near-duplicate columns split and offset weights in a linear model and make the explanations harder to read."))
+
 # =================================================================================================================
 # 8. XAI
 # =================================================================================================================
@@ -700,7 +710,7 @@ for n, r in INF.iterrows():
     irows.append([n, f"{r.score:.3f}", f"{r.calibrated_probability:.3f}", "podium" if r.predicted_podium else "no podium",
                   f"{int(r.n_fallback)} / {int(r.n_imputed)}"])
 story.append(table(irows, [5.6, 1.8, 3.4, 2.4, 3.0]))
-story.append(P("Table 17 — Inference demo. Complete record: qualified 4th, started 7th after a grid penalty, "
+story.append(P("Table 18 — Inference demo. Complete record: qualified 4th, started 7th after a grid penalty, "
                "finished off the podium. Without qualifying data the fallback assumes he qualified 7th, so the "
                "probability drops. Debutant: an unknown driver in the same car starting 5th.", "cap"))
 
