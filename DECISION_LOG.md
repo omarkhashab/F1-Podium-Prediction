@@ -8,6 +8,33 @@ All numbers come from the committed, fully executed notebook. It runs top to bot
 
 ---
 
+## 0. How each decision is motivated
+
+**Hypothesis-driven** = an EDA finding led to the choice (the EDA is shown in the notebook). **Empirical** = several options were run, each with a baseline row and its own results table or plot, and compared.
+
+| Decision | Basis | Evidence shown in the notebook |
+|---|---|---|
+| Modelling scope 2006–2024 (D1) | Hypothesis, then empirical | Qualifying-coverage plot (§4) → modern vs all-seasons trial on identical validation/test rows (§14.2) |
+| Merge shared drives (D3) | Hypothesis | Duplicates-per-season plot and table (§3.3); 15 odd-podium races explained (§5.6) |
+| Drop non-starters (D2), grid = 0 handling (D5) | Hypothesis | Grid = 0 share per season (§4 season overview); counts per status (§5.5, §5.7) |
+| Exclude Indianapolis 500 (D4) | Hypothesis | Separate field and 33-car grid (F1 guide); 11 races listed (§5.4) |
+| ISO country codes (D15) | Hypothesis | Category spellings found in EDA (§4) |
+| Outlier rule: hard limits only (D8) | Empirical | Hard limits vs robust z-score: flagged counts per rule and before/after histograms (§5.8) |
+| `race_shortened` rule (D16) | Empirical | Laps-only rule vs laps + time rule: false positives listed (§5.16) |
+| Feature set (26 of 36) | Hypothesis | Univariate AUC, decile plots, correlation and missingness heatmaps on training seasons (§9) |
+| Form window = 5 | Hypothesis, then empirical | N = 3 / 5 / 10 trial (§15.2) |
+| Constructor lineage (D12) | Hypothesis, then empirical | Lineage vs plain constructorId trial (§15.3) |
+| Missing indicators, preprocessing order | Empirical | E1–E3, each variant vs the baseline pipeline (§11) |
+| Split boundaries | Course guide, then empirical | Course split vs previous split (§14.3) |
+| Model family and hyperparameters | Empirical | 8 attempts, each in its own cell, with tuning grids and plots (§13); train/val comparison (§13.7) |
+| Threshold strategy | Empirical | Max-F1 vs "top 3 per race" for every model (§13.7) |
+| Class weights + calibration | Empirical | Weighted vs unweighted vs Platt vs isotonic (§13.8) |
+| Primary metric PR-AUC | Hypothesis | Podium base rate ~14 % (§6); ROC-AUC ≈ 0.93 for every model (§13.7) |
+| Final model choice | Empirical | Validation ranking + race-bootstrap intervals (§14, §14.1) |
+| Feature-group contributions | Empirical | Ablation with confidence intervals (§15.1) |
+
+---
+
 ## 1. Data scope and split
 
 | # | Decision | Why | Evidence |
