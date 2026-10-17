@@ -10,7 +10,7 @@ Predict, for every driver in every race, whether they finish on the podium (`pos
 | PDF report | [`report/F1_Podium_Prediction_Report.pdf`](report/F1_Podium_Prediction_Report.pdf) |
 | Project flow + every Milestone 1 deliverable with its results | [`PROJECT_SUMMARY.md`](PROJECT_SUMMARY.md) |
 | Every decision, with the numbers behind it | [`DECISION_LOG.md`](DECISION_LOG.md) |
-| Kaggle notebook | *add the link after uploading* |
+| Kaggle notebook | [kaggle.com/code/omarkhashab/milestone-1-submission](https://www.kaggle.com/code/omarkhashab/milestone-1-submission) |
 
 ## Headline results
 - **Split** (course guide boundaries): train 2006–2019, validation 2020–21, test 2022–24 — the test set is the whole ground-effect regulation era.
