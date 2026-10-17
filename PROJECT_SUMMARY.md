@@ -1,6 +1,6 @@
 # F1 Podium Prediction — Project Summary and Milestone 1 Deliverables
 
-CSEN 903 Milestone 1 · Team: Omar Osama (58-7197) · Mohamed Ayman (58-13475) · Moataz Ashraf Bahaeldin Abouelfetouh Abdelwahab (58-7852) · Omar Emad (58-14543)
+CSEN 903 Milestone 1 · Team: Omar Osama (58-7197) · Mohamed Ayman (58-13475) · Moataz Ashraf (58-7852) · Omar Emad (58-14543)
 
 This document walks through the whole project in order and then goes through **every deliverable the Milestone 1 brief asks for**. For each one it gives what the brief requires, where we deliver it and the results. All numbers come from the committed, fully executed notebook; a fresh Run All reproduces every output table exactly.
 

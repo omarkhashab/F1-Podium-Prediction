@@ -24,7 +24,7 @@ OUT, FIG = ROOT / "outputs", ROOT / "outputs" / "figures"
 PDF = ROOT / "report" / "F1_Podium_Prediction_Report.pdf"
 
 TEAM = ["Omar Osama (58-7197)", "Mohamed Ayman (58-13475)",
-        "Moataz Ashraf Bahaeldin Abouelfetouh Abdelwahab (58-7852)", "Omar Emad (58-14543)"]
+        "Moataz Ashraf (58-7852)", "Omar Emad (58-14543)"]
 REPO = "github.com/omarkhashab/F1-Podium-Prediction"
 
 # ---- fonts: Arial has the glyphs we need (≈ ≥ ρ → −); fall back to Helvetica elsewhere ----------------------

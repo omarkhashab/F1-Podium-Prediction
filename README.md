@@ -6,7 +6,7 @@ Predict, for every driver in every race, whether they finish on the podium (`pos
 |---|---|
 | Omar Osama | 58-7197 |
 | Mohamed Ayman | 58-13475 |
-| Moataz Ashraf Bahaeldin Abouelfetouh Abdelwahab | 58-7852 |
+| Moataz Ashraf | 58-7852 |
 | Omar Emad | 58-14543 |
 
 | Deliverable | Where |
