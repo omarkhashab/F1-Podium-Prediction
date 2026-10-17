@@ -1,15 +1,14 @@
 # F1 Podium Prediction — Project Summary and Milestone 1 Deliverables
 
-CSEN 903 Milestone 1 · Team: Omar Osama · Mohamed Ayman · Moataz Ashraf · Omar Emad · Deadline 18 Oct 2026, 23:59
+CSEN 903 Milestone 1 · Team: Omar Osama · Mohamed Ayman · Moataz Ashraf · Omar Emad
 
-This document walks through the whole project in order and then goes through **every deliverable the Milestone 1 brief asks for**. For each one it gives what the brief requires, where we deliver it, the results, and what an examiner is likely to check or ask. All numbers come from the committed, fully executed notebook; a fresh Run All reproduces every output table exactly.
+This document walks through the whole project in order and then goes through **every deliverable the Milestone 1 brief asks for**. For each one it gives what the brief requires, where we deliver it and the results. All numbers come from the committed, fully executed notebook; a fresh Run All reproduces every output table exactly.
 
 | File | Contents |
 |---|---|
 | [`F1_Podium_Prediction.ipynb`](F1_Podium_Prediction.ipynb) | The single run-all notebook (§1–§18 below refer to its sections) |
 | [`report/F1_Podium_Prediction_Report.pdf`](report/F1_Podium_Prediction_Report.pdf) | The analytical report (report sections are written "Report §x") |
-| [`DECISION_LOG.md`](DECISION_LOG.md) | Every decision with the evidence behind it, plus likely questions |
-| [`F1_Cleaning_Plan.md`](F1_Cleaning_Plan.md) | The cleaning specification (fixed steps + decisions D1–D16) |
+| [`DECISION_LOG.md`](DECISION_LOG.md) | Every decision with the evidence behind it |
 | `outputs/`, `outputs/figures/`, `codebooks/` | Every table (27 CSVs), figure (37 PNGs) and codebook (4 CSVs) the notebook writes |
 
 ---
@@ -66,7 +65,7 @@ flowchart LR
 
 ## Part 2 — The deliverables, one by one
 
-The brief lists eight deliverables. Each section below covers: **what the brief asks → what we deliver and where → results → what an examiner will check (with our answer)**.
+The brief lists eight deliverables. Each section below covers: **what the brief asks → what we deliver and where → results**.
 
 ---
 
@@ -82,11 +81,6 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 - No result is hard-coded: every metric is computed by `roc_auc_score`, `average_precision_score`, `f1_score` etc. on model predictions.
 - Every decision is marked `# DECISION:` in the code and justified in the markdown next to it; every interpretation sits in a ✍️ **WRITE-UP** cell under the evidence it interprets.
 - Works on Kaggle: the data folder is found automatically; `shap` and `lime` install themselves if missing (Internet must be ON).
-
-**What the examiner will check:**
-- *"Restart & Run All — does it finish?"* Yes, with 0 errors; nothing has to be edited by hand.
-- *"Is every conclusion backed by evidence?"* Each write-up cites the plot, table or experiment directly above it.
-- *"Are the trials kept in the notebook?"* Yes: every model attempt, tuning grid and experiment has its own cell and its results stay visible.
 
 ---
 
@@ -115,11 +109,6 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 - Lap cleaning: 589,081 laps → 513,483 clean laps → `pace_ratio` for 10,655 driver-races.
 - Class balance: podiums are 13.6 % of all rows, 14.2 % in the modern scope.
 - Plots: `cleaning_before_after`, `cleaning_outliers_before_after`, `audit_nan_heatmap_after`, `eda_clean_durations`, `eda_clean_grain_and_base_rate`.
-
-**What the examiner will check:**
-- *"Is the EDA visual and automated, not manual?"* Every finding comes from a computed table or plot; spelling issues are caught by a whitespace scan and an assertion that every value maps to an ISO code.
-- *"Do you show the effect of cleaning?"* Yes: before/after table (`cleaning_before_after.csv`) and plots of rows, missing cells and distributions.
-- *"How did EDA drive decisions?"* Each row in the table above links a finding to a decision (hypothesis-driven justification).
 
 ---
 
@@ -158,12 +147,6 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 **Leakage proof (two independent tests):**
 1. §8.1: for 300 random rows, form, points-share, pace and pit features are recomputed from races with an earlier date only — they match the vectorised features exactly; standings are asserted to come from an earlier-dated race (previous season for round 1).
 2. §17: the inference function rebuilds every feature from raw inputs using only races dated before the entry, and reproduces the table for 300 random validation/test rows.
-
-**What the examiner will check:**
-- *"Show me the duplicates and your rule."* §3.3 lists them; §5.6 applies the merge and explains why; 15 early races with ≠ 3 podium rows are each explained (one car shared by several drivers).
-- *"Why keep 'Withdrew' rows with a grid slot?"* At the cutoff we would have predicted for them; dropping them would select rows based on what happened later.
-- *"How is the form feature leakage-safe?"* `shift(1)` before the rolling window, plus the two recomputation tests.
-- *"Why scale-free points?"* Raw points changed meaning (a win was 10 points before 2010, 25 after; half-points races), so we use rank and share of the leader's points.
 
 ---
 
@@ -209,13 +192,6 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 - **Sensitivity (§14.2–14.3):** modern training beats all-seasons training for LR and RF (val 0.745 vs 0.727); with the previous split the model still beats the grid rule by +0.05.
 - **Plots:** validation ROC/PR curves, test confusion matrix + PR curves + calibration, tuning plots (LR, RF, GB, NN), NN training curves, bootstrap intervals.
 
-**What the examiner will check:**
-- *"Where is your baseline and does the complex model earn its complexity?"* Baseline = logistic regression (plus the grid rule as a non-learned reference). The forest, boosting and the network do **not** beat it significantly, so we keep the simplest model — evidence-based, not a default.
-- *"Was the test set used for any choice?"* No. Hyperparameters, thresholds, early stopping and the model choice use validation only; test is scored once in §14.
-- *"Why PR-AUC and not accuracy or ROC-AUC?"* Imbalance (15 % positives) and the ranking nature of the task; the table shows ROC-AUC barely separates the models.
-- *"Explain the NN."* Architecture, loss, optimiser, regularisation, early stopping and the six-architecture tuning are in §13.5–13.6.
-- *"Why this split?"* Season-based to avoid leakage across time; boundaries from the course guide; test = a whole new regulation era.
-
 ---
 
 ### Deliverable 5 — Feature-group ablation and preprocessing-order experiments
@@ -251,11 +227,6 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 - **Form window (§15.2):** N = 3 → Δ −0.013 [−0.022, −0.002] (worse), N = 10 → Δ −0.006 [−0.029, +0.014] (same). **N = 5 kept.**
 - **Constructor lineage vs plain `constructorId` (§15.3):** Δ −0.001 [−0.008, +0.005] — no accuracy difference. Families kept as a documented judgement call (a rename doesn't reset a real team's history; Q3 compares factories across eras).
 
-**What the examiner will check:**
-- *"Which group matters most, and is that more than noise?"* Qualifying / starting position, with a confidence interval that excludes 0.
-- *"Why does removing grid barely matter if pole is the strongest predictor?"* Because grid's information lives in `quali_pos` (ρ = 0.97); removing both costs 0.114.
-- *"Show two preprocessing-order experiments."* E1 (impute vs scale order) and E2 (fit before vs after the split); E3 adds the indicator trial.
-
 ---
 
 ### Deliverable 6 — Explainability: global (permutation importance, SHAP) and local (LIME / local SHAP)
@@ -272,11 +243,6 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 - **Local 1 — confident hit:** Lewis Hamilton, 2021 Spanish GP, pole: p = 0.98, won. SHAP and LIME both rank qualifying position first.
 - **Local 2 — missed podium:** Sebastian Vettel, 2020 Turkish GP, qualified 12th in a wet session (6.9 % gap to pole): p = 0.04, finished 3rd in a wet race. SHAP shows the large gap and `reached_q2` pulling down, 120 career podiums pushing up. The outcome came from race conditions no pre-race model can see.
 - **LIME vs SHAP:** LIME runs on the raw features through the full pipeline (rules read like "11 < quali_pos ≤ 17"); it agrees with SHAP on the main drivers. Its local surrogate fits well for the hit (R² 0.66) but weakly for the near-zero case (R² 0.29), so it is read qualitatively; SHAP is exact for a linear model.
-
-**What the examiner will check:**
-- *"Is this importance a causal effect?"* No — and the odd negative sign of `reached_q2` is our example of why.
-- *"Do local and global explanations agree?"* Yes, qualifying position leads in both; differences come from collinearity.
-- *"Why do LIME and SHAP differ?"* Different methods: LIME fits a local linear surrogate to perturbed samples (weak fit where the probability is flat), SHAP attributes the exact linear prediction.
 
 ---
 
@@ -303,15 +269,11 @@ The brief lists eight deliverables. Each section below covers: **what the brief 
 
 The no-qualifying probability is lower because the fallback assumes he qualified where he started (7th) — it cannot see the penalty.
 
-**What the examiner will check:**
-- *"Run it on a record with missing fields."* Two partially missing demos plus the leakage-guard demo.
-- *"Could the function itself leak?"* It only reads races dated before the entry, rejects post-race fields, and reproduces the modelling table for 300 random rows.
-
 ---
 
 ### Deliverable 8 — Analytical report (PDF)
 
-**The brief asks for:** a report combining the written answers to the three data-engineering questions with figures, the selected features and why each is valid at the pre-race cutoff, and known limitations (e.g. qualifying-coverage drift, era sensitivity). The checklist also asks for all plots and data-engineering answers in both the notebook and the report, and XAI plotted and explained in the report.
+**The brief asks for:** a report combining the written answers to the three data-engineering questions with figures, the selected features and why each is valid at the pre-race cutoff, and known limitations (e.g. qualifying-coverage drift, era sensitivity). The brief also asks for all plots and data-engineering answers in both the notebook and the report, and XAI plotted and explained in the report.
 
 **What we deliver:** [`report/F1_Podium_Prediction_Report.pdf`](report/F1_Podium_Prediction_Report.pdf), generated from the notebook outputs by `report/build_report.py`. Contents: summary · task and data · audit and cleaning (D1–D16 table) · Q1–Q3 · modelling table and features (validity table) · split and preprocessing · models (all five metrics on validation and test, bootstrap, calibration) · experiments · XAI · inference · limitations · conclusion · appendices (codebook judgement calls, **every remaining figure**, reproducibility).
 
@@ -336,74 +298,3 @@ The no-qualifying probability is lower because the fallback assumes he qualified
 
 **Known limitations (Report §10):** qualifying-coverage drift (complete only from 2003 → model restricted to 2006+); era sensitivity (test = new regulation era; 2022 hardest); small evaluation sets (39 / 68 races, intervals ±0.06–0.10); class-weighting distorts raw probabilities (calibrated); sprint features unusable while training ends in 2019, pit data only from 2011; small samples in Q1/Q2; judgement calls in the status and lineage codebooks; unpredictable race events (weather, first-lap incidents); the inference fallback hides a grid penalty.
 
-**What the examiner will check:**
-- *"Are all three questions answered in the report with figures?"* Yes (Report §3, Figures 6–9, Tables 2–4).
-- *"Is each feature justified against the cutoff?"* Report §4, Table 5.
-- *"Are limitations honest?"* Yes, including the ones that weaken our own choices (lineage brings no accuracy; NN slightly better with all seasons).
-
----
-
-## Part 3 — The Milestone 1 checklist
-
-| Checklist item | Status | Notebook | Report |
-|---|---|---|---|
-| Exploratory Data Analysis | ✅ | §3–§4, §6 | §2 |
-| Data cleaning — sentinel handling (`\N`), semantic typing | ✅ | §5.1–5.3 | §2.2 |
-| Data cleaning — grain one row per (raceId, driverId), duplicates documented | ✅ | §3.3, §5.6 | §2.2 |
-| Data analysis — plotting the results | ✅ | §4, §6 | §2 |
-| Data-engineering questions (all 3) — plotted | ✅ | §7 | §3 |
-| … answered in markdown and in the report | ✅ | §7 write-ups | §3 |
-| Feature selection — reasons with evidence | ✅ | §9 | §4 |
-| … plotting the effect of the features | ✅ | §9 (decile plots, correlations, missingness) | §4, App. B |
-| … leakage-safe form feature (past races only) | ✅ | §8, §8.1, §17 check | §4 |
-| Preprocessing — effect on distribution/range/values | ✅ | §11 | §5 |
-| … preprocessing-order experiments | ✅ | §11 (E1–E3) | §5 |
-| Proper train / validation / test split | ✅ | §10, §14.3 | §5, §7.2 |
-| Prediction model — statistical model / shallow FFNN and how it works | ✅ | §13 | §6.1 |
-| … its limitations | ✅ | §13 | §6.1, §10 |
-| … performance during training and validation | ✅ | §13.7 | §6.2 |
-| … performance on unseen test data | ✅ | §14 | §6.2–6.4 |
-| … plotting the reports | ✅ | §13–§14 | §6 |
-| … feature-group ablation | ✅ | §15.1 | §7.3 |
-| XAI — global (permutation importance, SHAP) | ✅ | §16.1 | §8.1 |
-| … local (LIME) | ✅ | §16.2 | §8.2 |
-| … plotting and explaining in the report | ✅ | §16 | §8 |
-
-## Part 4 — What the evaluation expects
-
-| Expectation (brief) | How we meet it |
-|---|---|
-| Every member prepared; any question to anyone | This summary + `DECISION_LOG.md` (§9 lists likely questions with short answers) |
-| Justify every step with evidence, not "an AI suggested it" | Every `# DECISION:` has a plot, number or experiment next to it |
-| Hypothesis-driven justification (EDA) | e.g. qualifying coverage plot → 2006+ scope; duplicates plot → D3; `grid = 0` analysis → D5 |
-| Empirical justification (before/after, each attempt in its own cell) | Scope comparison, split sensitivity, E1–E3, ablation, form window, lineage, calibration, all tuning grids |
-| Compare multiple approaches; ≥ 3 modelling attempts | 8 models: grid rule, LR, tuned LR, RF, tuned RF, gradient boosting, FFNN, tuned FFNN |
-| Baseline = statistical model or shallow FFNN | Logistic regression; complex models compared against it with bootstrap intervals |
-| Run-all ready, logical order, clear markdown | 0 errors, sequential execution, numbered sections, write-up under each result |
-| All plots and DE answers in notebook **and** report | All 37 figures appear in the report (main text + Appendix B) |
-
-## Part 5 — Submission (form: https://forms.gle/esDxHsvfzffYHVAZ9)
-
-| Item | Status |
-|---|---|
-| Accessible GitHub repo with the code | ✅ github.com/omarkhashab/F1-Podium-Prediction (public) |
-| PDF report | ✅ `report/F1_Podium_Prediction_Report.pdf` |
-| Accessible Kaggle notebook link | ⬜ Upload the notebook, attach the dataset (or upload `data/` as a dataset so numbers match exactly), Internet ON, Run All, set visibility to public, add the link to `README.md` |
-
-## Part 6 — Numbers to remember
-
-| | |
-|---|---|
-| Raw results rows → cleaned | 26,759 → 24,755 |
-| Duplicated (race, driver) pairs | 85 pairs (176 rows) → merged |
-| Modelling table | 7,905 rows (2006–2024), 26 of 36 features |
-| Split (rows / races) | 5,768 / 268 · 780 / 39 · 1,357 / 68 |
-| Podium rate | ~14–15 % |
-| Final model | Logistic regression, C = 1, balanced class weights |
-| Test PR-AUC / ROC-AUC / F1 | **0.698** / 0.934 / 0.690 |
-| Grid rule test PR-AUC | 0.647 (model +0.051, CI excludes 0) |
-| Biggest ablation effect | grid + qualifying −0.114 validation PR-AUC |
-| Top permutation importance | `quali_pos` 0.477 |
-| Q1 | Rankings change after 2014 (ρ = 0.21 grid / 0.50 qualifying) |
-| Q2 | No home advantage: OR 0.95 (0.80–1.13) |
-| Q3 | Caterham worst 2014–21 (23.5 %), Alpine worst 2022–24 (11.0 %); rates halve |

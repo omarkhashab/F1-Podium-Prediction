@@ -5,3 +5,8 @@ __pycache__/
 venv/
 .DS_Store
 Thumbs.db
+
+# course handouts (M1 brief, F1 guide), not our work
+descriptions/
+# team-internal exam prep (full decision log with to-do list and likely questions, deliverable checklist)
+team_prep/

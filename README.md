@@ -10,7 +10,6 @@ Predict, for every driver in every race, whether they finish on the podium (`pos
 | PDF report | [`report/F1_Podium_Prediction_Report.pdf`](report/F1_Podium_Prediction_Report.pdf) |
 | Project flow + every Milestone 1 deliverable with its results | [`PROJECT_SUMMARY.md`](PROJECT_SUMMARY.md) |
 | Every decision, with the numbers behind it | [`DECISION_LOG.md`](DECISION_LOG.md) |
-| Cleaning specification (fixed steps + D1–D16) | [`F1_Cleaning_Plan.md`](F1_Cleaning_Plan.md) |
 | Kaggle notebook | *add the link after uploading* |
 
 ## Headline results
