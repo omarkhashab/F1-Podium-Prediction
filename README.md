@@ -2,7 +2,12 @@
 
 Predict, for every driver in every race, whether they finish on the podium (`positionOrder <= 3`) using only what is known **after qualifying and before the race starts**. The project covers the full pipeline: audit and cleaning of the 14-table Ergast/Kaggle F1 dataset (1950–2024), three data-engineering questions, a leakage-safe one-row-per-driver-race modelling table, model comparison, experiments, explainability and an inference function.
 
-**Team:** Omar Osama · Mohamed Ayman · Moataz Ashraf · Omar Emad
+| Team member | ID |
+|---|---|
+| Omar Osama | 58-7197 |
+| Mohamed Ayman | 58-13475 |
+| Moataz Ashraf Bahaeldin Abouelfetouh Abdelwahab | 58-7852 |
+| Omar Emad | 58-14543 |
 
 | Deliverable | Where |
 |---|---|

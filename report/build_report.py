@@ -23,7 +23,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT, FIG = ROOT / "outputs", ROOT / "outputs" / "figures"
 PDF = ROOT / "report" / "F1_Podium_Prediction_Report.pdf"
 
-TEAM = ["Omar Osama", "Mohamed Ayman", "Moataz Ashraf", "Omar Emad"]
+TEAM = ["Omar Osama (58-7197)", "Mohamed Ayman (58-13475)",
+        "Moataz Ashraf Bahaeldin Abouelfetouh Abdelwahab (58-7852)", "Omar Emad (58-14543)"]
 REPO = "github.com/omarkhashab/F1-Podium-Prediction"
 
 # ---- fonts: Arial has the glyphs we need (≈ ≥ ρ → −); fall back to Helvetica elsewhere ----------------------
@@ -151,7 +152,7 @@ story = []
 story += [Spacer(1, 1.2 * cm), P("Formula 1 Podium Prediction", "title"), Spacer(1, 4),
           P("Milestone 1 — Data engineering, leakage-safe modelling and explainability", "sub"), Spacer(1, 10),
           P("CSEN 903 Advanced Computer Lab · German University in Cairo · Winter 2026", "sub"),
-          P(" · ".join(TEAM), "sub"),
+          *[P(member, "sub") for member in TEAM],
           P(f"{date(2026, 10, 18).strftime('%d %B %Y')} · code: {REPO}", "sub"), Spacer(1, 16)]
 
 story.append(box([P("<b>Summary</b>", "box"), Spacer(1, 3)] + bullets([
